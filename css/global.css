@@ -1,0 +1,104 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* Global style */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: firebrick;
+  --box-bg: #6512ffe6;
+  --btn-bg: #2626bd;
+  --btn-clr: white;
+  --board-bg: #562ba5e6;
+  --played-bg: #412e65;
+  --selected-bg: rgba(255, 192, 203, 0.525);
+  --start-btn-bg: #ec6277;
+  --modal-btn-bg: lightcoral;
+  --win-clr: rgba(255, 217, 0, 0.906);
+  --slider-bg: #d3d3d3;
+  --slider-thumb-bg: pink;
+}
+
+input,
+select,
+button {
+  display: block;
+  border: none;
+  outline: none;
+}
+
+button,
+[type="submit"] {
+  cursor: pointer;
+}
+/* 
+
+/* Font */
+body,
+input,
+select,
+button {
+  font-family: "Delicious Handrawn", cursive !important;
+}
+
+/* Classes */
+.btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-clr);
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.main-bg {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.219);
+  background-blend-mode: soft-light;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.align-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.w-100 {
+  width: 100%;
+}

@@ -1,0 +1,445 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* Global */
+.bg-1 {
+  background-image: url(../assets/images/group-1/bg.jpg);
+}
+
+.bg-2 {
+  background-image: url(../assets/images/group-2/bg.jpg);
+}
+
+.bg-3 {
+  background-image: url(../assets/images/group-3/bg.jpg);
+}
+
+.bg-4 {
+  background-image: url(../assets/images/group-4/bg.jpg);
+}
+
+.hide {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.557);
+}
+
+.modal .holder {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  background-color: var(--box-bg);
+  padding: 2.5rem 3rem;
+  border-radius: 0.5rem;
+}
+
+/* Layout */
+/* Start options modal */
+#options-btn {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  border-radius: 0.25rem;
+  border: 2px solid;
+  border-color: grey black black grey;
+  background-color: black;
+  color: white;
+  -webkit-box-shadow: 1px 1px 7px 0px #5a5a5a;
+  box-shadow: 1px 1px 7px 0px #5a5a5a;
+  -webkit-transition: border-color ease 0.3s, -webkit-box-shadow ease 0.1s,
+    -webkit-transform ease 0.1s;
+  transition: border-color ease 0.3s, -webkit-box-shadow ease 0.1s,
+    -webkit-transform ease 0.1s;
+  -o-transition: box-shadow ease 0.1s, transform ease 0.1s,
+    border-color ease 0.3s;
+  transition: box-shadow ease 0.1s, transform ease 0.1s, border-color ease 0.3s;
+  transition: box-shadow ease 0.1s, transform ease 0.1s, border-color ease 0.3s,
+    -webkit-box-shadow ease 0.1s, -webkit-transform ease 0.1s;
+}
+
+#options-btn:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: black grey grey black;
+  -webkit-transform: translate(1px, 1px);
+  -ms-transform: translate(1px, 1px);
+  transform: translate(1px, 1px);
+}
+
+#options-holder {
+  z-index: 50;
+}
+
+#options-holder .holder {
+  width: 400px;
+  padding: 4rem 2rem 2rem;
+}
+
+#options-holder .holder div {
+  gap: 1rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+#options-holder .holder div:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+#volume-value {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  -webkit-transform: translate(-50%, -130%);
+  -ms-transform: translate(-50%, -130%);
+  transform: translate(-50%, -130%);
+  font-size: 1.2rem;
+  color: white;
+}
+
+#music-slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 1.25rem;
+  height: 14px;
+  background-color: var(--slider-bg);
+  opacity: 0.7;
+  -webkit-transition: opacity ease 0.2s;
+  -o-transition: opacity ease 0.2s;
+  transition: opacity ease 0.2s;
+}
+
+#music-slider:hover {
+  opacity: 1;
+}
+
+#music-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: var(--slider-thumb-bg);
+  cursor: pointer;
+}
+
+#timer-input {
+  font-size: 1.5rem;
+  width: 50px;
+}
+
+#timer-input::-webkit-inner-spin-button,
+#timer-input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+#close-options {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin-left: auto;
+  background-color: var(--red);
+  color: white;
+  font-size: 1.25rem;
+  padding: 0rem 0.5rem 0.4rem;
+  border-radius: 0.2rem;
+  line-height: 1;
+  opacity: 0.7;
+  -webkit-transition: opacity ease 0.3s;
+  -o-transition: opacity ease 0.3s;
+  transition: opacity ease 0.3s;
+}
+
+#close-options:hover {
+  opacity: 1;
+}
+/* End options modal */
+
+/* Start result modal */
+#result-modal {
+  z-index: 100;
+}
+
+#result-modal .action-btns {
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+#result-modal .action-btns * {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  background-color: var(--modal-btn-bg);
+  border: 2px solid white;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+#result-modal .action-btns a {
+  text-decoration: none;
+}
+
+#result-modal #win,
+#result-modal #lose {
+  display: none;
+}
+
+#result-modal.win-mode #win,
+#result-modal.lose-mode #lose {
+  display: block;
+}
+/* End result modal */
+
+/* Start game */
+#container {
+  gap: 3rem;
+}
+
+.game-container {
+  width: 400px;
+  background-color: var(--board-bg);
+  padding: 2rem 1rem 1rem;
+  border-radius: 0.3rem;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.choices {
+  list-style: none;
+  margin-bottom: 3rem;
+  counter-reset: order;
+}
+
+.choices li {
+  width: 25%;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.choices button {
+  background-color: #00000093;
+  border-radius: 0.5rem;
+}
+
+.cell,
+.choices button {
+  border: 1px solid white;
+}
+
+.choices li::after {
+  counter-increment: order;
+  content: counter(order);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.game-container img {
+  max-width: 100%;
+}
+
+.board {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.board > div {
+  width: 25%;
+  padding: 0.5rem;
+}
+
+.cell,
+.choices button {
+  height: 70px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.cell.played {
+  background-color: var(--played-bg);
+}
+
+.cell.selected {
+  background-color: var(--selected-bg);
+}
+
+.repeated {
+  border: 2px solid var(--red);
+  -webkit-filter: drop-shadow(2px 4px 6px black);
+  filter: drop-shadow(2px 4px 6px black);
+  -webkit-animation: shake 0.5s ease-in-out 2 both;
+  animation: shake 0.5s ease-in-out 2 both;
+}
+
+.user-won .cell {
+  -webkit-animation: blink 0.3s ease-in-out 4 both;
+  animation: blink 0.3s ease-in-out 4 both;
+}
+/* End game */
+
+/* Start side content */
+.side-content {
+  padding: 3rem 2rem;
+  color: white;
+  margin-top: 4rem;
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
+}
+
+.name {
+  font-size: 3.5rem;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.692), -1px -1px black;
+}
+
+#start-btn {
+  margin: 3rem auto 0;
+  font-size: 1.5rem;
+  padding: 0.25rem 1.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--start-btn-bg);
+  color: white;
+  border: 2px solid black;
+}
+
+.timer {
+  text-align: center;
+  font-size: 4rem;
+  text-shadow: 4px 4px black;
+}
+/* End side content */
+
+/* Animations */
+/* Losing animation when repeating cells */
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+  10% {
+    -webkit-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+  20% {
+    -webkit-transform: translate(-3px);
+    transform: translate(-3px);
+  }
+  30% {
+    -webkit-transform: translate(3px);
+    transform: translate(3px);
+  }
+  40% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+  50% {
+    -webkit-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+  60% {
+    -webkit-transform: translate(-3px);
+    transform: translate(-3px);
+  }
+  70% {
+    -webkit-transform: translate(3px);
+    transform: translate(3px);
+  }
+  80% {
+    -webkit-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+  90% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+  100% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+  10% {
+    -webkit-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+  20% {
+    -webkit-transform: translate(-3px);
+    transform: translate(-3px);
+  }
+  30% {
+    -webkit-transform: translate(3px);
+    transform: translate(3px);
+  }
+  40% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+  50% {
+    -webkit-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+  60% {
+    -webkit-transform: translate(-3px);
+    transform: translate(-3px);
+  }
+  70% {
+    -webkit-transform: translate(3px);
+    transform: translate(3px);
+  }
+  80% {
+    -webkit-transform: translate(-1px);
+    transform: translate(-1px);
+  }
+  90% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+  100% {
+    -webkit-transform: translate(1px);
+    transform: translate(1px);
+  }
+}
+
+/* Winning animation */
+@-webkit-keyframes blink {
+  0% {
+    border: 3px solid var(--win-clr);
+  }
+  50% {
+    border: 3px solid #eee;
+  }
+  100% {
+    border: 3px solid var(--win-clr);
+  }
+}
+@keyframes blink {
+  0% {
+    border: 3px solid var(--win-clr);
+  }
+  50% {
+    border: 3px solid #eee;
+  }
+  100% {
+    border: 3px solid var(--win-clr);
+  }
+}

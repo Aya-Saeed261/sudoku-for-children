@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- Main style -->
+    <link rel="stylesheet" href="css/game.css" />
+    <title>Sudoku</title>
+  </head>
+  <body>
+    <button type="button" id="options-btn">Options</button>
+    <!-- Options Modal -->
+    <div id="options-holder" class="modal d-flex justify-center align-center hide">
+      <div class="holder position-relative">
+        <button type="button" id="close-options" class="d-flex justify-center">x</button>
+        <div class="d-flex align-center">
+          <label for="music-slider">Music:</label>
+          <div class="w-100 position-relative">
+            <span id="volume-value">20%</span>
+            <input
+              type="range"
+              name="music-slider"
+              id="music-slider"
+              class="w-100"
+              min="0"
+              max="100"
+              step="10"
+              value="20"
+              data-value="20"
+            />
+          </div>
+        </div>
+        <div class="d-flex align-center">
+          <label for="timer-input">Timer:</label>
+          <input
+            type="number"
+            name="timer-input"
+            id="timer-input"
+            min="10"
+            max="60"
+            step="5"
+            value="60"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Result Modal -->
+    <div
+      id="result-modal"
+      data-show="false"
+      class="modal d-flex justify-center align-center hide"
+    >
+      <div class="holder">
+        <div id="win">Congratulations, You won!</div>
+        <div id="lose">
+          <p>Game Over!</p>
+          <p>You Lost!</p>
+        </div>
+        <div class="action-btns d-flex justify-center align-center">
+          <button type="button" id="play-again">Play again</button>
+          <a href="index.html">Go to homepage</a>
+          <a href="gallery.html">Choose another group</a>
+        </div>
+      </div>
+    </div>
+    <div id="container" class="main-bg bg-cover d-flex justify-center">
+      <div class="game-container">
+        <!-- Choices -->
+        <ul class="choices d-flex justify-center align-center">
+          <li class="position-relative">
+            <button type="button" class="w-100 d-flex justify-center align-center">
+              <img src="" alt="choice 1" width="50" />
+            </button>
+          </li>
+          <li class="position-relative">
+            <button type="button" class="w-100 d-flex justify-center align-center">
+              <img src="" alt="choice 2" width="50" />
+            </button>
+          </li>
+          <li class="position-relative">
+            <button type="button" class="w-100 d-flex justify-center align-center">
+              <img src="" alt="choice 3" width="50" />
+            </button>
+          </li>
+          <li class="position-relative">
+            <button type="button" class="w-100 d-flex justify-center align-center">
+              <img src="" alt="choice 4" width="50" />
+            </button>
+          </li>
+        </ul>
+        <!-- Board -->
+        <div class="board d-flex">
+          <div>
+            <div class="cell" data-indx="1" data-row="1" data-col="1">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="2" data-row="1" data-col="2">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="3" data-row="1" data-col="3">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="4" data-row="1" data-col="4">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="5" data-row="2" data-col="1">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="6" data-row="2" data-col="2">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="7" data-row="2" data-col="3">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="8" data-row="2" data-col="4">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="9" data-row="3" data-col="1">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="10" data-row="3" data-col="2">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="11" data-row="3" data-col="3">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="12" data-row="3" data-col="4">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="13" data-row="4" data-col="1">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="14" data-row="4" data-col="2">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="15" data-row="4" data-col="3">
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div>
+            <div class="cell" data-indx="16" data-row="4" data-col="4">
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Side content -->
+      <div class="side-content">
+        <h1 class="name">Welcome, <span id="userName"></span></h1>
+        <div>
+          <button type="button" id="start-btn">Start</button>
+          <p class="timer hide"></p>
+        </div>
+      </div>
+      <!-- Audios -->
+      <audio id="bg-music" muted loop preload="auto">
+        <source src="" type="audio/mpeg" />
+      </audio>
+      <audio id="move-sound">
+        <source src="assets/sounds/move.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="select-sound">
+        <source src="assets/sounds/select.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="win-sound">
+        <source src="assets/sounds/win.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="lose-sound">
+        <source src="assets/sounds/lose.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <!-- Scripts -->
+    <script src="js/functions.js"></script>
+    <script type="module" src="js/game.js"></script>
+  </body>
+</html>
