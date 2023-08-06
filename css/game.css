@@ -36,7 +36,7 @@
   color: white;
   text-align: center;
   font-size: 2rem;
-  background-color: var(--box-bg);
+  background-color: var(--game-box-bg);
   padding: 2.5rem 3rem;
   border-radius: 0.5rem;
 }

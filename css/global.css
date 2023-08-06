@@ -15,8 +15,10 @@
 
 :root {
   --red: rgb(148, 32, 32);
-  --box-bg: #6512ffe6;
-  --btn-bg: #2626bd;
+  --box-bg: #177779f0;
+  --btn-bg: #b06125;
+  --game-box-bg: #6512ffe6;
+  --game-btn-bg: #2626bd;
   --btn-clr: white;
   --board-bg: #562ba5e6;
   --played-bg: #412e65;
@@ -101,4 +103,22 @@ button {
 
 .w-100 {
   width: 100%;
+}
+
+.child-img {
+  position: absolute;
+  top: 60%;
+  height: 200px;
+  display: block;
+  max-width: 256px;
+}
+
+.child-1-img {
+  left: 0;
+  transform: translateX(-90%);
+}
+
+.child-2-img {
+  right: 0;
+  transform: translateX(92%);
 }
