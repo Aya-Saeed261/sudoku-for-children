@@ -170,7 +170,7 @@ const onRepeatedCells = function (repeatedCells, timerId, modal, loseAudio) {
   setTimeout(function () {
     modal.classList.remove("hide");
     modal.classList.add("lose-mode");
-  }, 1300);
+  }, 1500);
 };
 
 /*
@@ -209,6 +209,6 @@ const checkResult = function (
     setTimeout(function () {
       modal.classList.remove("hide");
       modal.classList.add("win-mode");
-    }, 1300);
+    }, 1500);
   }
 };

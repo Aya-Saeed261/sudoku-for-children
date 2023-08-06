@@ -14,7 +14,7 @@ form.addEventListener("submit", function (e) {
 });
 
 /*
- * Check if user enetred name then emptied input on purpose
+ * Check if user entered name then emptied input on purpose
  * Remove error msg when user starts typing name
  */
 nameInput.addEventListener("input", function (e) {

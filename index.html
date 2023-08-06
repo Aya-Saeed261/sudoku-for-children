@@ -18,12 +18,17 @@
     <title>Sudoku</title>
   </head>
   <body>
-    <div id="container" class="main-bg bg-cover d-flex justify-center align-center">
+    <div
+      id="container"
+      class="main-bg bg-cover d-flex justify-center align-center"
+    >
       <form action="./gallery.html" id="login">
-        <div class="name-holder position-relative d-flex align-end">
+        <div class="d-flex align-end">
           <label for="name" class="fw-bold">User Name :</label>
-          <span class="error-msg">Name is required</span>
-          <input type="text" name="name" id="name" class="w-100" />
+          <div class="name-holder w-100 position-relative">
+            <span class="error-msg">Name is required</span>
+            <input type="text" name="name" id="name" class="w-100" />
+          </div>
         </div>
         <div class="d-flex align-end">
           <label for="level" class="fw-bold">Select level :</label>

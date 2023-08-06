@@ -17,7 +17,7 @@ const loseAudio = document.querySelector("#lose-sound");
 const winAudio = document.querySelector("#win-sound");
 
 // Script is module
-const userGroup = sessionStorage.getItem("sudoku-group");
+const userGroup = sessionStorage.getItem("sudoku-group") || 1;
 let currentCell,
   currentIndx,
   timerId,
@@ -38,7 +38,7 @@ const numOfCells = 16,
 
   // Set username
   document.querySelector("#userName").innerText =
-    sessionStorage.getItem("sudoku-name");
+    sessionStorage.getItem("sudoku-name") || "Unknown";
 
   // Set background music
   bgMusicAudio.querySelector("source").src = `assets/sounds/${userGroup}.mp3`;
@@ -55,7 +55,7 @@ startBtn.addEventListener("click", function () {
 
   // Hide start button
   this.classList.add("hide");
-  
+
   // Show countdown
   timerText.classList.remove("hide");
 
@@ -121,7 +121,7 @@ playAgainBtn.onclick = function () {
   resultModal.classList.add("hide");
   resultModal.dataset.show = "false";
 
-  // Show start button, reset and hide timer 
+  // Show start button, reset and hide timer
   timerText.classList.add("hide");
   timerText.innerText = "";
   startBtn.classList.remove("hide");
@@ -153,4 +153,4 @@ timerInput.addEventListener("input", function () {
 });
 
 // Disable user entering number out of range
-timerInput.addEventListener("keydown", (e) => e.preventDefault())
+timerInput.addEventListener("keydown", (e) => e.preventDefault());

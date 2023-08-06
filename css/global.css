@@ -14,7 +14,7 @@
 }
 
 :root {
-  --red: firebrick;
+  --red: rgb(148, 32, 32);
   --box-bg: #6512ffe6;
   --btn-bg: #2626bd;
   --btn-clr: white;

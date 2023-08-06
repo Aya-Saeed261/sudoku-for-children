@@ -230,6 +230,7 @@
 .choices button {
   background-color: #00000093;
   border-radius: 0.5rem;
+  cursor: auto !important;
 }
 
 .cell,
